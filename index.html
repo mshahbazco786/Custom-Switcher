@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .switcher {
+            width: fit-content;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .switch-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            transform: translateX(50%);
+            padding: 8px;
+            border: 1px solid #F8AE71;
+            color: #F8AE71;
+            font-size: 12px;
+        }
+
+        .active .switch-text {
+            transform: translateX(0%);
+            background: #F8AE71;
+            color: #fff;
+        }
+
+        .switch-text svg {
+            padding-left: 8px;
+        }
+    </style>      
+</head>
+<body>
+    <div class="switcher" id="switcher">
+        <div class="switch-text" id="switchText">            
+            Sauvegarder <svg xmlns="http://www.w3.org/2000/svg" width="11.277" height="12.988" viewBox="0 0 11.277 12.988">
+                <g id="vuesax_bold_archive-add" data-name="vuesax/bold/archive-add" transform="translate(-320.262 -204.932)">
+                    <g id="archive-add" transform="translate(320.262 204.932)">
+                        <path id="Vector" d="M8.764,0H2.506A2.512,2.512,0,0,0,0,2.506v9.147c0,1.169.837,1.662,1.863,1.1l3.168-1.759a1.375,1.375,0,0,1,1.214,0L9.414,12.75c1.026.571,1.863.078,1.863-1.1V2.506A2.521,2.521,0,0,0,8.764,0ZM7.258,6.1H6.122V7.278a.487.487,0,1,1-.974,0V6.1H4.012a.487.487,0,1,1,0-.974H5.148v-1.1a.487.487,0,1,1,.974,0v1.1H7.258a.487.487,0,0,1,0,.974Z" transform="translate(0 0)" fill="#f8ae71"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <script>
+        const switcher = document.getElementById("switcher");
+        const switchText = document.getElementById("switchText");
+
+        switcher.addEventListener("click", function () {
+            switcher.classList.toggle("active");
+            if (switcher.classList.contains("active")) {
+                switchText.innerHTML = 'Sauvegardé';
+            } else {
+                switchText.innerHTML = 'Sauvegarder <svg xmlns="http://www.w3.org/2000/svg" width="11.277" height="12.988" viewBox="0 0 11.277 12.988"><g id="vuesax_bold_archive-add" data-name="vuesax/bold/archive-add" transform="translate(-320.262 -204.932)"><g id="archive-add" transform="translate(320.262 204.932)"><path id="Vector" d="M8.764,0H2.506A2.512,2.512,0,0,0,0,2.506v9.147c0,1.169.837,1.662,1.863,1.1l3.168-1.759a1.375,1.375,0,0,1,1.214,0L9.414,12.75c1.026.571,1.863.078,1.863-1.1V2.506A2.521,2.521,0,0,0,8.764,0ZM7.258,6.1H6.122V7.278a.487.487,0,1,1-.974,0V6.1H4.012a.487.487,0,1,1,0-.974H5.148v-1.1a.487.487,0,1,1,.974,0v1.1H7.258a.487.487,0,0,1,0,.974Z" transform="translate(0 0)" fill="#f8ae71"/></g></g></svg>';
+            }
+        });
+    </script>
+</body>
+</html>
